@@ -15,13 +15,28 @@
   <body>
 
       <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="nav navbar-nav">
-            <a class="nav-item nav-link active" href="/">Ecotienda</a>
-            </i><a class="nav-item nav-link hover" href="{{ route('register.index')}}"><i class="fa fa-address-card" aria-hidden="true"></i> Registrarse</a>
-            <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
-        </div>
-    </nav>
+      @if(auth()->check())
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
+                <div class="nav navbar-nav">
+                    <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
+                    <a class="nav-item nav-link active" href="/">Ecotienda</a>
+                    </i><a class="nav-item nav-link hover" href="{{ route('register.index')}}"><i class="fa fa-address-card" aria-hidden="true"></i> Registrarse</a>
+                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
+                    <span class="nav-item">Bienvenid@, {{ auth()->user()->name }}>
+                </div>
+            </nav>
+
+        @else
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
+                <div class="nav navbar-nav">
+                    <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
+                    <a class="nav-item nav-link active" href="/">Ecotienda</a>
+                    </i><a class="nav-item nav-link hover" href="{{ route('register.index')}}"><i class="fa fa-address-card" aria-hidden="true"></i> Registrarse</a>
+                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
+                </div>
+            </nav>
+
+        @endif
 
     <!-- Contenido -->
     <div class="container">
