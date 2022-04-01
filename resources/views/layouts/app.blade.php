@@ -20,28 +20,28 @@
                 <div class="nav navbar-nav">
                     <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
                     <a class="nav-item nav-link active" href="/">Ecotienda</a>
-                    </i><a class="nav-item nav-link hover" href="{{ route('register.index')}}"><i class="fa fa-address-card" aria-hidden="true"></i> Registrarse</a>
-                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
+                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito</a>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             <i class="fa fa-user" aria-hidden="true"></i> {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="fa fa-address-book" aria-hidden="true"></i> Tu perfil</a>
-                            <a class="dropdown-item" href="#">Cerrar sesión</a>
+                            <a class="dropdown-item" href="{{ route('login.show') }}"><i class="fa fa-address-book" aria-hidden="true"></i> Tu perfil</a>
+                            <a class="dropdown-item" href="{{ route('login.destroy') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Cerrar sesión</a>
                         </div>
                     </li>
                 </div>
             </nav>
 
         @else
+
             <nav class="navbar navbar-expand navbar-dark bg-dark">
                 <div class="nav navbar-nav">
                     <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
                     <a class="nav-item nav-link active" href="/">Ecotienda</a>
                     </i><a class="nav-item nav-link hover" href="{{ route('register.index')}}"><i class="fa fa-address-card" aria-hidden="true"></i> Registrarse</a>
-                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Ingresar</a>
+                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-key" aria-hidden="true"></i> Ingresar</a>
                 </div>
             </nav>
 

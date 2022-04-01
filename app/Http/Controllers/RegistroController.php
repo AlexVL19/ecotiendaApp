@@ -13,6 +13,13 @@ class RegistroController extends Controller
 
     public function store() {
 
+        $this->validate(request(), [
+            'name' => 'required',
+            'sndname' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+        ]);
+
         $user = User::create(request(['name', 'sndname', 'email', 'password']));
 
         auth()->login($user);

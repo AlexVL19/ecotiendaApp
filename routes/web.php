@@ -29,3 +29,9 @@ Route::post('/register', [RegistroController::class, 'store'])
 
 Route::post('/login', [SessionController::class, 'store'])
     ->name('login.store');
+
+Route::get('/logout', [SessionController::class, 'destroy'])
+    ->name('login.destroy');
+
+    Route::get('/details', [SessionController::class, 'show'])
+    ->name('login.show');

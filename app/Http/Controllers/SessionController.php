@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
+
     public function create() {
         return view('auth.login');
     }
@@ -25,5 +27,10 @@ class SessionController extends Controller
         auth()->logout();
 
         return redirect()->to('/');
+    }
+
+    public function show() {
+        $data = Auth::user();
+        return view('auth.show', compact('data'));
     }
 }
