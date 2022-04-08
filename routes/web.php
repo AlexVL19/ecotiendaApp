@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [SessionController::class, 'create'])
+    ->middleware('guest')
     ->name('login.index');
 
 Route::get('/register', [RegistroController::class, 'create'])

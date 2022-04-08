@@ -16,11 +16,25 @@
         </div>
         <br>
 
+        @error('name')
+        <div class="alert alert-danger" role="alert">
+            {{ $message }}
+          </div>
+        <br>
+        @enderror
+
         <div class="form-group">
             <label for="name">Apellidos del usuario</label>
             <input type="text" class="form-control" id="sndname" name="sndname" placeholder="Escriba sus apellidos...">
           </div>
           <br>
+
+        @error('sndname')
+        <div class="alert alert-danger" role="alert">
+            {{ $message }}
+        </div>
+        <br>
+        @enderror
 
         <div class="form-group">
             <label for="email">Correo electrónico</label>
@@ -28,16 +42,23 @@
           </div>
         <br>
 
+        @error('email')
+        <div class="alert alert-danger" role="alert">
+            {{ $message }}
+        </div>
+        <br>
+        @enderror
+
           <div class="form-group">
             <label for="password">Contraseña</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Escriba su contraseña...">
         </div>
         <br>
 
-        @error('message')
+        @error('password')
         <div class="alert alert-danger" role="alert">
-            * Hubo un error durante el proceso de registro. Por favor, intente de nuevo.
-          </div>
+            {{ $message }}
+        </div>
         <br>
         @enderror
 

@@ -17,7 +17,7 @@ class RegistroController extends Controller
             'name' => 'required',
             'sndname' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'password' => 'required',
         ]);
 
         $user = User::create(request(['name', 'sndname', 'email', 'password']));
