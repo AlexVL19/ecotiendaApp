@@ -4,7 +4,7 @@
 
 @section('contents')
 
-<div class="container border rounded mt-5" style="width: 600px">
+<div class="container border rounded mt-5" style="width: 600px; background-color: #edf7ef">
     <h3 class="text-center mt-4">Registro de usuarios</h3>
     <br>
     <form method="POST" action="">

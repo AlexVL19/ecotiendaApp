@@ -20,6 +20,15 @@ class SessionController extends Controller
             );
         }
 
+        else {
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.index');
+            }
+            else {
+                return redirect()->to('/');
+            }
+        }
+
         return redirect()->to('/');
 }
 

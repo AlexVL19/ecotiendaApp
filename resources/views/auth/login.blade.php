@@ -4,7 +4,7 @@
 
 @section('contents')
 
-<div class="container border rounded mt-5" style="width: 450px">
+<div class="container border rounded mt-5" style="width: 450px; background-color: #edf7ef">
     <h3 class="text-center mt-4">Ingreso al sistema</h3>
     <br>
     <center>

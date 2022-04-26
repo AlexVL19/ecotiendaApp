@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,5 +35,9 @@ Route::post('/login', [SessionController::class, 'store'])
 Route::get('/logout', [SessionController::class, 'destroy'])
     ->name('login.destroy');
 
-    Route::get('/details', [SessionController::class, 'show'])
+Route::get('/details', [SessionController::class, 'show'])
     ->name('login.show');
+
+Route::get('/admin', [AdminController::class, 'index'])
+    ->middleware('auth.admin')
+    ->name('admin.index');
