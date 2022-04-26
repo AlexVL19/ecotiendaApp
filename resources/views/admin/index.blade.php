@@ -2,4 +2,8 @@
 
 @section('title', 'Administrador')
 
+@section('contents')
+
 hola admin
+
+@endsection
