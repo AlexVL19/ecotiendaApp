@@ -20,8 +20,8 @@
             <nav class="navbar navbar-expand navbar-dark bg-dark">
                     <div class="nav navbar-nav">
                         <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
-                        <a class="nav-item nav-link active" href="/">Ecotienda</a>
-                        <a class="nav-item nav-link" href="#"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a>
+                        <a class="nav-item nav-link active" href="/admin">Ecotienda</a>
+                        <a class="nav-item nav-link" href="{{ route('userList.index')}}"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a>
                         <a class="nav-item nav-link" href="#"><i class="fa fa-list" aria-hidden="true"></i> Categorías</a>
                         <a class="nav-item nav-link" href="#"><i class="fa fa-leaf" aria-hidden="true"></i> Productos</a>
 

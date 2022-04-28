@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,5 @@ Route::get('/details', [SessionController::class, 'show'])
 Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth.admin')
     ->name('admin.index');
+
+Route::resource('/userList', userController::class);
