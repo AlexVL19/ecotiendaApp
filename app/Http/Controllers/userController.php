@@ -19,6 +19,17 @@ class userController extends Controller
         return view('users.index', compact('userobj'));
     }
 
+    public function search(Request $request)
+    {
+        $term = $request->input('term');
+
+        $usersearch = User::query()
+            ->where('name', 'LIKE', "%{$term}%")
+            ->get();
+
+        return view('users.search', compact('usersearch'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +92,12 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userobj = User::find($id);
+
+        $userobj->fill($request->all());
+        $userobj->save();
+
+        return redirect( route('userList.index'));
     }
 
     /**
@@ -92,6 +108,10 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userobj = User::find($id);
+
+        $userobj->delete();
+
+        return redirect( route('userList.index'));
     }
 }

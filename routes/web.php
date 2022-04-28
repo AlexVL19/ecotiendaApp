@@ -44,3 +44,6 @@ Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin.index');
 
 Route::resource('/userList', userController::class);
+
+Route::get('/search', [userController::class, 'search'])
+    ->name('userList.search');

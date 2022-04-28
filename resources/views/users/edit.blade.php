@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label for="name">Apellidos del usuario</label>
-            <input type="text" class="form-control" id="sndname" name="sndname" placeholder="Escriba sus apellidos...">
+            <input type="text" class="form-control" id="sndname" name="sndname" value="{{$userobj->sndname}}">
           </div>
           <br>
 
@@ -39,7 +39,7 @@
 
         <div class="form-group">
             <label for="email">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Escriba su correo...">
+            <input type="email" class="form-control" id="email" name="email" value="{{$userobj->email}}">
           </div>
         <br>
 
@@ -52,7 +52,7 @@
 
           <div class="form-group">
             <label for="password">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Escriba su contraseña...">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Inserte contraseña nueva...">
         </div>
         <br>
 
@@ -64,7 +64,7 @@
         @enderror
 
         <center>
-        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Añadir</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-refresh"></i> Actualizar</button>
         <a href="{{route('userList.index')}}" class="btn btn-dark"><i class="fa fa-reply"></i> Volver</a>
         <br>
         <br>
