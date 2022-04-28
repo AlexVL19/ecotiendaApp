@@ -12,10 +12,10 @@
             <br>
             <br>
             <div>
-                <div class="mx-auto">
+                <div class="ml-5 mr-5">
                     <div class="">
                         <form action="{{ route('userList.search') }}" method="GET" role="search">
-        
+
                             <div class="input-group">
                                 <input type="text" class="form-control mr-2" name="term" placeholder="Buscar por nombre..." id="term" size="5">
                                 <span class="input-group-btn mr-2 mt-1">

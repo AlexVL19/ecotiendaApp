@@ -12,12 +12,12 @@
             <br>
             <br>
             <div>
-                <div class="mx-auto">
+                <div class="mr-5 ml-5">
                     <div class="">
                         <form action="{{ route('userList.search') }}" method="GET" role="search">
-        
+
                             <div class="input-group">
-                                <input type="text" class="form-control mr-2" name="term" placeholder="Buscar por nombre..." id="term" size="5">
+                                <input type="text" class="form-control mr-2" name="term" placeholder="Buscar por nombre..." id="term" size="6">
                                 <span class="input-group-btn mr-5 mt-1">
                                     <button class="btn btn-success" type="submit">
                                         <i class="fa fa-search"></i> Buscar
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <hr class="text-center" style="line-height: 200px">
+            <hr class="text-center" style="line-height: 250px">
         </center>
     </div>
 
@@ -50,7 +50,7 @@
                 <form class="form-group" action="userList/{{$user->id}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" class="btn btn-danger mt-1">
                         <i class="fa fa-trash"></i> Borrar
                     </button>
                 </form>
