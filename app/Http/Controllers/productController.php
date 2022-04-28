@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Categories;
 
 class productController extends Controller
 {
@@ -26,7 +27,8 @@ class productController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $catobj = Categories::all();
+        return view('products.create', compact('catobj'));
     }
 
     /**
@@ -37,7 +39,23 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $prodobj = new Products();
+
+        $prodobj->product_name = $request->input('product_name');
+        $prodobj->cost = $request->input('cost');
+        $prodobj->desc = $request->input('desc');
+        $prodobj->quantity = $request->input('quantity');
+        $prodobj->status = $request->input('status');
+        $prodobj->image = $request->input('image');
+        $prodobj->cat_id = $request->input('cat_id');
+
+        if ($request->hasFile('image')){
+            $prodobj->image = $request->file('image')->store('public');
+        }
+
+        $prodobj->save();
+
+        return redirect( route('products.index'));
     }
 
     /**
