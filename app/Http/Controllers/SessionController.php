@@ -42,4 +42,18 @@ class SessionController extends Controller
         $data = Auth::user();
         return view('auth.show', compact('data'));
     }
+
+    public function edit() {
+        $data = Auth::user();
+        return view('auth.edit', compact('data'));
+    }
+
+    public function applySetting(Request $request, $id) {
+        $userobj = User::find($id);
+
+        $userobj->fill($request->all());
+        $userobj->save();
+
+        return redirect('/');
+    }
 }

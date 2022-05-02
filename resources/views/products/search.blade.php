@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Productos')
+@section('title', 'Búsqueda')
 
 @section('contents')
 
     <div class="container mt-3 mb-5">
-        <h3 class="text-center">Lista de productos</h3>
+        <h3 class="text-center">Resultados de búsqueda</h3>
         <br>
         <center>
             <a href="{{ route('products.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Añadir...</a>
@@ -14,14 +14,19 @@
             <div>
                 <div class="mr-5 ml-5">
                     <div class="">
-                        <form action="{{route('products.search')}}" method="GET" role="search">
+                        <form action="" method="GET" role="search">
 
                             <div class="input-group">
                                 <input type="text" class="form-control mr-2" name="term" placeholder="Buscar por producto..." id="term" size="6">
-                                <span class="input-group-btn mr-5 mt-1">
+                                <span class="input-group-btn mr-2 mt-1">
                                     <button class="btn btn-success" type="submit">
                                         <i class="fa fa-search"></i> Buscar
                                     </button>
+                                </span>
+                                <span class="input-group-btn mt-1">
+                                    <a href="{{ route('products.index')}}" class="btn btn-dark">
+                                        <i class="fa fa-remove"></i> Cancelar
+                                    </a>
                                 </span>
                             </div>
                         </form>
@@ -34,7 +39,7 @@
 
         <center>
         <div class="row">
-            @foreach ($prodobj as $pro)
+            @foreach ($prosearch as $pro)
 
             @if ($pro->quantity != 0)
 

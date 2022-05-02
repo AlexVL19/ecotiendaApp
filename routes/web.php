@@ -42,6 +42,9 @@ Route::get('/logout', [SessionController::class, 'destroy'])
 Route::get('/details', [SessionController::class, 'show'])
     ->name('login.show');
 
+Route::get('/editUser', [SessionController::class, 'edit'])
+    ->name('login.edit');
+
 Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth.admin')
     ->name('admin.index');
@@ -52,6 +55,9 @@ Route::get('/search', [userController::class, 'search'])
     ->name('userList.search');
 
 Route::resource('/products', productController::class);
+
+Route::get('/searchProducts', [productController::class, 'search'])
+    ->name('products.search');
 
 Route::resource('/categories', categoryController::class);
 

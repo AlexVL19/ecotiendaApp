@@ -10,6 +10,6 @@
     <div class="container mt-2 mb-3 text-center">
         <p class="text-center">{{ auth()->user()->email }}</p>
         <p class="text-center">Usuario creado en {{ auth()->user()->created_at }}</p>
-        <a href="#" class="btn btn-dark">Editar usuario</a>
+        <a href="{{route('login.edit')}}" class="btn btn-dark">Editar usuario</a>
     </div>
 @endsection

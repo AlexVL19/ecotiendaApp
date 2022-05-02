@@ -31,6 +31,17 @@ class productController extends Controller
         return view('products.create', compact('catobj'));
     }
 
+    public function search(Request $request)
+    {
+        $term = $request->input('term');
+
+        $prosearch = Products::query()
+            ->where('product_name', 'LIKE', "%{$term}%")
+            ->get();
+
+        return view('products.search', compact('prosearch'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -77,7 +88,12 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        //
+        $prodobj = Products::find($id);
+        $catobj = Categories::all();
+
+        return view('products.edit', compact('prodobj', 'catobj'));
+
+
     }
 
     /**
@@ -89,7 +105,17 @@ class productController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $prodobj = Products::find($id);
+
+        $prodobj->fill($request->except('image'));
+
+        if ($request->hasFile('image')) {
+            $prodobj->image = $request->file('image')->store('public');
+        }
+
+        $prodobj->save();
+
+        return redirect( route('products.index'));
     }
 
     /**
@@ -100,6 +126,16 @@ class productController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prodobj = Products::find($id);
+
+        $urlimage = $prodobj->image;
+        $imgname = str_replace('public/','\storage\\',$urlimage);
+
+        $comproute = public_path().$imgname;
+
+        unlink($comproute);
+        $prodobj->delete();
+
+        return redirect( route('products.index'));
     }
 }
