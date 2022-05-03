@@ -54,6 +54,6 @@ class SessionController extends Controller
         $userobj->fill($request->all());
         $userobj->save();
 
-        return redirect('/');
+        return redirect()->to('/');
     }
 }

@@ -45,6 +45,9 @@ Route::get('/details', [SessionController::class, 'show'])
 Route::get('/editUser', [SessionController::class, 'edit'])
     ->name('login.edit');
 
+Route::put('/applySettings/{id}', [SessionController::class, 'applySetting'])
+    ->name('login.applySetting');
+
 Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth.admin')
     ->name('admin.index');

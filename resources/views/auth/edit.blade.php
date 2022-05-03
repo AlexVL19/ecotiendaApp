@@ -7,7 +7,8 @@
 <div class="container border rounded mt-5" style="width: 600px; background-color: #edf7ef">
     <h3 class="text-center mt-4">Editar su usuario</h3>
     <br>
-    <form method="POST" action="/userList">
+    <form method="POST" action="/applySettings/{{auth()->user()->id}}">
+        @method('PUT')
         @csrf
 
         <div class="form-group">
