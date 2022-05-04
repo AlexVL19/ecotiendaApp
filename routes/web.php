@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,9 @@ Route::resource('/categories', categoryController::class);
 
 Route::get('/searchCat', [categoryController::class, 'search'])
     ->name('categories.search');
+
+Route::get('/cart', [CartController::class, 'showProducts'])
+    ->name('cart.index');
+
+Route::post('/addProduct', [CartController::class, 'addProducts'])
+    ->name('cart.addProducts');

@@ -45,10 +45,10 @@
                 <div class="nav navbar-nav">
                     <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
                     <a class="nav-item nav-link active" href="/">D-Compras</a>
-                    <a class="nav-item nav-link" href="{{ route('login.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito</a>
+                    <a class="nav-item nav-link" href="{{ route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito</a>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ route('cart.index')}}" id="navbardrop" data-toggle="dropdown">
                             <i class="fa fa-user" aria-hidden="true"></i> {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu">
@@ -94,5 +94,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('js/toast.js')}}"></script>
   </body>
 </html>

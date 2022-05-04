@@ -25,7 +25,7 @@
             el mercado cada semana. ¡Echa un vistazo a nuestros productos!
         </p>
         <br>
-        <a href="#" class="btn btn-success"><i class="fa fa-shopping-basket"></i> Ver productos</a>
+        <a href="{{route('cart.index')}}" class="btn btn-success"><i class="fa fa-shopping-basket"></i> Ver productos</a>
     </div>
 </center>
 @endsection
