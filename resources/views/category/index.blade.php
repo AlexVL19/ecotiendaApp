@@ -44,7 +44,7 @@
                     <hr>
                     <b>Estado:</b> {{$cat->status}}
                     <hr>
-                    <b>Usuario creado en:</b> {{$cat->created_at}}
+                    <b>Categoría creada en:</b> {{$cat->created_at}}
                     <hr>
                     <a href="categories/{{$cat->id}}/edit" class="btn btn-dark"><i class="fa fa-pencil"></i> Editar</a>
                     <form class="form-group" action="categories/{{$cat->id}}" method="POST">
@@ -63,7 +63,7 @@
                     <hr>
                     <b>Estado:</b> {{$cat->status}}
                     <hr>
-                    <b>Usuario creado en:</b> {{$cat->created_at}}
+                    <b>Categoría creada en:</b> {{$cat->created_at}}
                     <hr>
                     <a href="categories/{{$cat->id}}/edit" class="btn btn-dark"><i class="fa fa-pencil"></i> Editar</a>
                     <form class="form-group" action="categories/{{$cat->id}}" method="POST">

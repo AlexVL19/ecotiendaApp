@@ -36,19 +36,22 @@
                             <br>
                             <form action="/addProduct" method="POST">
                                 @csrf
-                                <input type="number" id="quantity" name="quantity" max="{{$pro->quantity}}" min="0">
-                                <input type="hidden" id="product_name" name="product_name" value="{{$pro->product_name}}">
-                                <input type="hidden" id="cost" name="cost" value="{{$pro->cost}}">
-                                <input type="hidden" id="userid" name="userid" value="{{auth()->user()->id}}">
-                                <input type="hidden" id="final_cost" name="final_cost" value="{{$pro->cost}}">
+                                <input type="number" id="quantity" name='quantity' oninput="multiplicar()" max="{{$pro->quantity}}" min="0">
+                                <input type="hidden" id="product_name" name='product_name' value="{{$pro->product_name}}">
+                                <input type="hidden" id="cost" name='cost' oninput="multiplicar()" value="{{$pro->cost}}">
+                                <input type="hidden" id="userid" name='userid' value="{{auth()->user()->id}}">
+                                <input type="hidden" id="final_cost" name='final_cost'>
                         </li>
                         </ul>
                         <div class="card-body">
-                            <button type="submit" class="btn btn-success"><i class="fa fa-cart-plus" id="boton"></i> Añadir al carrito</button>
+                            <button type="submit" class="btn btn-success" id="addProduct"><i class="fa fa-cart-plus"></i> Añadir al carrito</button>
                         </form>
                         </div>
                     </div>
                 </div>
+
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="{{ asset('js/toast.js')}}"></script>
 
                 @elseif ($pro->quantity)
 

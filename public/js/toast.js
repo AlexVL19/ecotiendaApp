@@ -1,3 +1,4 @@
+var boton = document.getElementById('addProduct');
 
 var toast = Swal.mixin({
     toast: true,
@@ -8,10 +9,16 @@ var toast = Swal.mixin({
     timer: 2000,
 });
 
-document.getElementById('boton').addEventListener('click', function(){
-    event.preventDefault();
-    toast.fire({
-        animation: true,
-        title: 'Producto añadido al carrito'
+function multiplicar(){
+    var n1 = document.getElementById("quantity").value;
+    var n2 = document.getElementById("cost").value;
+    var result = document.getElementById("final_cost");
+    var n3 = n1 * n2;
+    result.value = n3;
+}
+
+Array.from(document.querySelectorAll("[name='quantity']")).forEach(i => {
+    boton.addEventListener('click', function(){
+        multiplicar();
     });
 });
