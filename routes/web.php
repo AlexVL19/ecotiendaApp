@@ -73,3 +73,6 @@ Route::get('/cart', [CartController::class, 'showProducts'])
 
 Route::post('/addProduct', [CartController::class, 'addProducts'])
     ->name('cart.addProducts');
+
+Route::get('/checkout/{id}', [CartController::class, 'checkoutList'])
+    ->name('cart.checkout');

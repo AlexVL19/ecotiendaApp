@@ -40,7 +40,7 @@
                                 <input type="hidden" id="product_name" name='product_name' value="{{$pro->product_name}}">
                                 <input type="hidden" id="cost" name='cost' oninput="multiplicar()" value="{{$pro->cost}}">
                                 <input type="hidden" id="userid" name='userid' value="{{auth()->user()->id}}">
-                                <input type="hidden" id="final_cost" name='final_cost'>
+                                <input type="hidden" id="final_cost" name='final_cost' oninput="multiplicar()">
                         </li>
                         </ul>
                         <div class="card-body">

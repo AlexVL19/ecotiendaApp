@@ -28,4 +28,9 @@ class CartController extends Controller
 
         return redirect( route('cart.index'));
     }
+
+    public function checkoutList ($id) {
+        $order = Orders::find($id);
+        return view ('cart.checkout', compact('order'));
+    }
 }

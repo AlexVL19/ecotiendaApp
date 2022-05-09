@@ -46,6 +46,7 @@
                     <img class="navbar-brand" style="width: 50px; height: 50px" src="{{ asset('img/logo.png') }}">
                     <a class="nav-item nav-link active" href="/">D-Compras</a>
                     <a class="nav-item nav-link" href="{{ route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito</a>
+                    <a class="nav-item nav-link" href="/checkout/{{auth()->user()->id}}"><i class="fa fa-dollar" aria-hidden="true"></i> Caja</a>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ route('cart.index')}}" id="navbardrop" data-toggle="dropdown">

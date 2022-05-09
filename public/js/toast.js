@@ -1,13 +1,9 @@
-var boton = document.getElementById('addProduct');
-
-var toast = Swal.mixin({
-    toast: true,
-    icon: 'success',
-    animation: false,
-    position: 'top-right',
-    showConfirmButton: false,
-    timer: 2000,
-});
+var boton =
+document.querySelectorAll('#addProduct');
+boton.forEach(add =>
+    add.addEventListener('click', ()=>
+    multiplicar()
+    ));
 
 function multiplicar(){
     var n1 = document.getElementById("quantity").value;
@@ -16,9 +12,3 @@ function multiplicar(){
     var n3 = n1 * n2;
     result.value = n3;
 }
-
-Array.from(document.querySelectorAll("[name='quantity']")).forEach(i => {
-    boton.addEventListener('click', function(){
-        multiplicar();
-    });
-});
