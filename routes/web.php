@@ -74,5 +74,11 @@ Route::get('/cart', [CartController::class, 'showProducts'])
 Route::post('/addProduct', [CartController::class, 'addProducts'])
     ->name('cart.addProducts');
 
-Route::get('/checkout/{id}', [CartController::class, 'checkoutList'])
+Route::get('/checkout', [CartController::class, 'checkoutList'])
     ->name('cart.checkout');
+
+Route::get('/deleteItem/{id}',[CartController::class, 'destroy']);
+
+Route::get('/clear',[CartController::class, 'clearList']);
+
+Route::get('/buy',[CartController::class, 'confirmPurchase']);

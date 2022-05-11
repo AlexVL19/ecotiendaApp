@@ -31,11 +31,16 @@
                 <td>{{$ord->quantity}}</td>
                 <td>{{$ord->final_cost}}</td>
                 <td>
-                    <a href="#" class="btn btn-danger"><i class="fa fa-close"></i> Quitar</a>
+                    <a href="/deleteItem/{{$ord->id}}" class="btn btn-danger"><i class="fa fa-close"></i> Quitar</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <br>
+    <a href="/clear" class="btn btn-dark mr-2"><i class="fa fa-eraser"></i> Quitar todo</a>
+    <a href="/buy"><button class="btn btn-success" id="confirm"><i class="fa fa-check-circle"></i> Confirmar</button></a>
+
+</center>
 
 @endsection

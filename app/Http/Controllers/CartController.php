@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\Orders;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -29,8 +30,35 @@ class CartController extends Controller
         return redirect( route('cart.index'));
     }
 
-    public function checkoutList ($id) {
+    public function checkoutList () {
+        $authid = auth()->user()->id;
+
+        $order = Orders::where('userid', '=', $authid)->get();
+        
+        return view ('cart.checkout')->with('order', $order);
+    }
+
+    public function destroy ($id) {
         $order = Orders::find($id);
-        return view ('cart.checkout', compact('order'));
+        $order->delete();
+        return redirect(route('cart.checkout'));
+    }
+
+    public function clearList () {
+        $authid = auth()->user()->id;
+
+        $order = Orders::where('userid', '=', $authid)->delete();
+
+
+        return redirect(route('cart.checkout'));
+    }
+
+    public function confirmPurchase () {
+        $authid = auth()->user()->id;
+
+        $order = Orders::where('userid', '=', $authid)->delete();
+
+
+        return redirect(route('cart.index'));
     }
 }
