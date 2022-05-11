@@ -19,11 +19,13 @@ class CartController extends Controller
 
         $order = new Orders();
 
+        $total = ($request->input('cost'))*($request->input('quantity'));
+
         $order->userid = $request->input('userid');
         $order->product_name = $request->input('product_name');
         $order->cost = $request->input('cost');
         $order->quantity = $request->input('quantity');
-        $order->final_cost = $request->input('final_cost');
+        $order->final_cost = $total;
 
         $order->save();
 
@@ -34,7 +36,7 @@ class CartController extends Controller
         $authid = auth()->user()->id;
 
         $order = Orders::where('userid', '=', $authid)->get();
-        
+
         return view ('cart.checkout')->with('order', $order);
     }
 

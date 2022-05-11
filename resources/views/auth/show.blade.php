@@ -4,12 +4,26 @@
 
 @section('contents')
     <div class="container mt-3 mb-5">
-        <h3 class="text-center">{{ auth()->user()->name }} {{ auth()->user()->sndname }}</h3>
-    </div>
+        <h3 class="text-center">Información del usuario</h3>
 
-    <div class="container mt-2 mb-3 text-center">
-        <p class="text-center">{{ auth()->user()->email }}</p>
-        <p class="text-center">Usuario creado en {{ auth()->user()->created_at }}</p>
-        <a href="{{route('login.edit')}}" class="btn btn-dark">Editar usuario</a>
+        <center>
+        <div class="container">
+            <div class="col mt-5 mb-5 text-center">
+                <div class="alert alert-success" role="alert" style="width: 450px">
+                    <hr>
+                    <b>Nombres:</b> {{auth()->user()->name}}
+                    <hr>
+                    <b>Apellidos:</b> {{auth()->user()->sndname}}
+                    <hr>
+                    <b>Correo:</b> {{auth()->user()->email}}
+                    <hr>
+                    <b>Rol:</b> {{auth()->user()->role}}
+                    <hr>
+                </div>
+            </div>
+            <a href="{{route('login.edit')}}" class="btn btn-dark"><i class="fa fa-pencil"></i> Editar usuario</a>
+        </div>
+
+        </center>
     </div>
 @endsection

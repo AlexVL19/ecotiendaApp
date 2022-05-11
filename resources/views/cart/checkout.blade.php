@@ -39,7 +39,7 @@
     </table>
     <br>
     <a href="/clear" class="btn btn-dark mr-2"><i class="fa fa-eraser"></i> Quitar todo</a>
-    <a href="/buy"><button class="btn btn-success" id="confirm"><i class="fa fa-check-circle"></i> Confirmar</button></a>
+    <button class="btn btn-success" id="confirm"><i class="fa fa-check-circle"></i> Confirmar</button>
 
 </center>
 

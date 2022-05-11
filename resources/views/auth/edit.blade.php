@@ -64,7 +64,7 @@
         @enderror
 
         <center>
-        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Añadir</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-refresh"></i> Actualizar</button>
         <a href="{{route('login.show')}}" class="btn btn-dark"><i class="fa fa-reply"></i> Volver</a>
         <br>
         <br>
